@@ -10,7 +10,7 @@
                            __ / /
                           /___ /
 
-##### [介绍文档](https://github.com/tangchen2018/proxy_pool_tornado/doc/introduce.md)
+##### [介绍文档](https://github.com/tangchen2018/proxy_pool_tornado/blob/master/doc/introduce.md)
 
 * 支持版本: ![](https://img.shields.io/badge/Python-3.x-blue.svg)
 

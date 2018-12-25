@@ -39,7 +39,7 @@
 
 * DB:
 
-　　用于存放代理IP，目前支持SSDB和Redis(推荐SSDB)。至于为什么选择SSDB，大家可以参考这篇[文章](https://www.sdk.cn/news/2684),个人觉得SSDB是个不错的Redis替代方案，如果你没有用过SSDB，安装起来也很简单，可以参考[这里](https://github.com/jhao104/memory-notes/blob/master/SSDB/SSDB%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E8%AE%B0%E5%BD%95.md)；
+　　用于存放代理IP，目前支持Redis。
 
 * Schedule:
 
@@ -47,7 +47,7 @@
 
 * ProxyApi:
 
-　　代理池的外部接口，由[Flask](http://flask.pocoo.org/)实现，功能是给爬虫提供与代理池交互的接口。
+　　代理池的外部接口，由[Tornado]实现，功能是给爬虫提供与代理池交互的接口。
 
 <!--#### 功能图纸-->
 ![设计](https://pic2.zhimg.com/v2-f2756da2986aa8a8cab1f9562a115b55_b.png)
@@ -118,7 +118,7 @@ curl localhost:5010/get_all/
 ```
 
 ### 5、使用
-　　定时任务启动后，会通过GetFreeProxy中的方法抓取代理存入数据库并验证。此后默认每10分钟会重复执行一次。定时任务启动大概一两分钟后，便可在[SSDB](https://github.com/jhao104/SSDBAdmin)中看到刷新出来的可用的代理：
+　　定时任务启动后，会通过GetFreeProxy中的方法抓取代理存入数据库并验证。此后默认每10分钟会重复执行一次。定时任务启动大概一两分钟后，便可在redis中更新
 
 ![useful_proxy](https://pic2.zhimg.com/v2-12f9b7eb72f60663212f317535a113d1_b.png)
 
