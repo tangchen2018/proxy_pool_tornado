@@ -1,14 +1,6 @@
-<<<<<<< HEAD
 
 爬虫IP代理池
 =======
-[![Build Status](https://travis-ci.org/jhao104/proxy_pool.svg?branch=master)](https://travis-ci.org/jhao104/proxy_pool)
-[![](https://img.shields.io/badge/Powered%20by-@j_hao104-green.svg)](http://www.spiderpy.cn/blog/)
-[![Requirements Status](https://requires.io/github/jhao104/proxy_pool/requirements.svg?branch=master)](https://requires.io/github/jhao104/proxy_pool/requirements/?branch=master)
-[![Packagist](https://img.shields.io/packagist/l/doctrine/orm.svg)](https://github.com/jhao104/proxy_pool/blob/master/LICENSE)
-[![GitHub contributors](https://img.shields.io/github/contributors/jhao104/proxy_pool.svg)](https://github.com/jhao104/proxy_pool/graphs/contributors)
-[![](https://img.shields.io/badge/language-Python-green.svg)](https://github.com/jhao104/proxy_pool)
-
     ______                        ______             _
     | ___ \_                      | ___ \           | |
     | |_/ / \__ __   __  _ __   _ | |_/ /___   ___  | |
@@ -58,22 +50,18 @@ config.py 为项目配置文件
 
 # 配置Redis
 -------
->>>>>>> f70e4434157a8418f9373935e6bda77fce4ada05
 host = localhost  # db host
 port = 8888       # db port
 name = proxy      # 默认配置
 
 # 配置 ProxyGetter
-<<<<<<< HEAD
 =======
 -------
->>>>>>> f70e4434157a8418f9373935e6bda77fce4ada05
 freeProxyFirst  = 1  # 这里是启动的抓取函数，可在ProxyGetter/getFreeProxy.py 扩展
 freeProxySecond = 1
 ....
 
 # 配置 HOST (api服务)
-<<<<<<< HEAD
 port = 5010          # 监听端口
 # 上面配置启动后，代理api地址为 http://127.0.0.1:5010
 
@@ -89,12 +77,10 @@ port = 9999          # 监听端口
 启动:
 # 如果你的依赖已经安全完成并且具备运行条件,可以直接在运行main.py
 # 到Run目录下:
->>>>>>> f70e4434157a8418f9373935e6bda77fce4ada05
 >>>python main.py
 
 # 如果运行成功你应该看到有4个main.py进程
 
-<<<<<<< HEAD
 # 你也可以分别运行他们,
 # 依次到Api下启动ProxyApi.py,Schedule下启动ProxyRefreshSchedule.py和ProxyValidSchedule.py即可.
 ```
@@ -131,7 +117,6 @@ api	method	Description	arg
 爬虫使用
 　　如果要在爬虫代码中使用的话， 可以将此api封装成函数直接使用，例如：
 
->>>>>>> f70e4434157a8418f9373935e6bda77fce4ada05
 import requests
 
 def get_proxy():
@@ -156,19 +141,16 @@ def getHtml():
     # 出错5次, 删除代理池中代理
     delete_proxy(proxy)
     return None
-<<<<<<< HEAD
 ```
 
 ### 扩展代理
 
 =======
 扩展代理
->>>>>>> f70e4434157a8418f9373935e6bda77fce4ada05
 　　项目默认包含几个免费的代理获取方法，但是免费的毕竟质量不好，所以如果直接运行可能拿到的代理质量不理想。所以，提供了代理获取的扩展方法。
 
 　　添加一个新的代理获取方法如下:
 
-<<<<<<< HEAD
 * 1、首先在[GetFreeProxy](https://github.com/jhao104/proxy_pool/blob/b9ccdfaada51b57cfb1bbd0c01d4258971bc8352/ProxyGetter/getFreeProxy.py#L32)类中添加你的获取代理的静态方法，
 该方法需要以生成器(yield)形式返回`host:ip`格式的代理，例如:
 
@@ -176,7 +158,6 @@ def getHtml():
 
 =======
 1、首先在GetFreeProxy类中添加你的获取代理的静态方法， 该方法需要以生成器(yield)形式返回host:ip格式的代理，例如:
->>>>>>> f70e4434157a8418f9373935e6bda77fce4ada05
 class GetFreeProxy(object):
     # ....
 
@@ -190,7 +171,6 @@ class GetFreeProxy(object):
         for proxy in proxies:
             yield proxy
         # 确保每个proxy都是 host:ip正确的格式就行
-<<<<<<< HEAD
 ```
 
 * 2、添加好方法后，修改Config.ini文件中的`[ProxyGetter]`项：
@@ -201,14 +181,12 @@ class GetFreeProxy(object):
 =======
 2、添加好方法后，修改Config.ini文件中的[ProxyGetter]项：
 　　在config.py的[ProxyGetter]下添加自定义的方法的名字:
->>>>>>> f70e4434157a8418f9373935e6bda77fce4ada05
 
 [ProxyGetter]
 ;register the proxy getter function
 freeProxyFirst  = 0  # 如果要取消某个方法，将其删除或赋为0即可
 ....
 freeProxyCustom  = 1  # 确保名字和你添加方法名字一致
-<<<<<<< HEAD
 
 ```
 
@@ -221,4 +199,3 @@ freeProxyCustom  = 1  # 确保名字和你添加方法名字一致
 　　任何问题欢迎在Issues 中反馈，如果没有账号可以去 我的博客中留言。
 
 　　你的反馈会让此项目变得更加完美。
->>>>>>> f70e4434157a8418f9373935e6bda77fce4ada05
