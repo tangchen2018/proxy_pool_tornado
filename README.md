@@ -8,13 +8,16 @@ git clone git@github.com:tangchen2018/proxy_pool_tornado.git
 安装依赖:
 pip install -r requirements.txt
 配置config.py:
-# config.py 为项目配置文件
+config.py 为项目配置文件
+
 # 配置Redis
+-------
 host = localhost  # db host
 port = 8888       # db port
 name = proxy      # 默认配置
 
 # 配置 ProxyGetter
+-------
 freeProxyFirst  = 1  # 这里是启动的抓取函数，可在ProxyGetter/getFreeProxy.py 扩展
 freeProxySecond = 1
 ....
@@ -23,7 +26,7 @@ freeProxySecond = 1
 port = 9999          # 监听端口
 # 上面配置启动后，代理api地址为 http://127.0.0.1:9999
 启动:
-# 如果你的依赖已经安全完成并且具备运行条件,可以直接在Run下运行main.py
+# 如果你的依赖已经安全完成并且具备运行条件,可以直接在运行main.py
 # 到Run目录下:
 >>>python main.py
 
