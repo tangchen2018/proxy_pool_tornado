@@ -120,22 +120,11 @@ curl localhost:5010/get_all/
 ### 5、使用
 　　定时任务启动后，会通过GetFreeProxy中的方法抓取代理存入数据库并验证。此后默认每10分钟会重复执行一次。定时任务启动大概一两分钟后，便可在redis中更新
 
-![useful_proxy](https://pic2.zhimg.com/v2-12f9b7eb72f60663212f317535a113d1_b.png)
+　　启动ProxyApi.py后即可在浏览器中使用接口获取代理
 
-　　启动ProxyApi.py后即可在浏览器中使用接口获取代理，一下是浏览器中的截图:
-
-　　index页面:
-
-![index](https://pic3.zhimg.com/v2-a867aa3db1d413fea8aeeb4c693f004a_b.png)
-
-　　get：
-
-![get](https://pic1.zhimg.com/v2-f54b876b428893235533de20f2edbfe0_b.png)
-
-　　get_all：
-
-![get_all](https://pic3.zhimg.com/v2-5c79f8c07e04f9ef655b9bea406d0306_b.png)
-
+	/
+　　/get
+　　/get_all
 
 　　爬虫中使用，如果要在爬虫代码中使用的话， 可以将此api封装成函数直接使用，例如:
 ```
